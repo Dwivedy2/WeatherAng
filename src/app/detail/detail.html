@@ -1,0 +1,68 @@
+<div class="detail-wrapper">
+
+  <!-- Back button -->
+  <button class="btn-back" (click)="home()">← Back</button>
+
+  <!-- Loading state -->
+  @if(weatherRes == null) {
+    <div class="loading-state">
+      <div class="spinner"></div>
+      <p>Fetching weather…</p>
+    </div>
+  } @else {
+    <!-- Weather card — show this when data is loaded -->
+    <div class="weather-card">
+
+      <div class="city-header">
+        <h1 class="city-name">{{city | titlecase}}</h1>
+        <p class="city-country">Country</p>
+      </div>
+
+      <div class="temp-display">
+        <span class="temp-main">24°C</span>
+        <span class="weather-icon">⛅</span>
+      </div>
+
+      <p class="weather-desc">Partly cloudy</p>
+
+      <div class="weather-stats">
+
+        <div class="stat-item">
+          <span class="stat-icon">💧</span>
+          <span class="stat-value">65%</span>
+          <span class="stat-label">Humidity</span>
+        </div>
+
+        <div class="stat-item">
+          <span class="stat-icon">💨</span>
+          <span class="stat-value">12 km/h</span>
+          <span class="stat-label">Wind</span>
+        </div>
+
+        <div class="stat-item">
+          <span class="stat-icon">🌡</span>
+          <span class="stat-value">22°C</span>
+          <span class="stat-label">Feels like</span>
+        </div>
+
+        <div class="stat-item">
+          <span class="stat-icon">👁</span>
+          <span class="stat-value">10 km</span>
+          <span class="stat-label">Visibility</span>
+        </div>
+
+      </div>
+
+    </div>
+  }
+
+
+  <!-- Error state -->
+   @if(isErr) {
+    <div class="error-state">
+      <p>Something went wrong. Please go back and try again.</p>
+    </div>
+   }
+  
+
+</div>

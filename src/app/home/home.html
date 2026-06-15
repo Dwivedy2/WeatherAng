@@ -1,0 +1,23 @@
+<div class="home-wrapper">
+
+  <div class="home-hero">
+    <div class="hero-icon">🌤</div>
+    <h1>Weather</h1>
+    <p>Search any city to get the current forecast</p>
+  </div>
+
+  <div class="search-box">
+    <input
+      type="text"
+      placeholder="Enter city name…"
+      #cityInput
+    />
+    <button class="btn-search" (click)="search(cityInput)">Search</button>
+  </div>
+
+  <!-- Show this block when a search error occurs (city not found etc.) -->
+  <div class="error-msg">
+    City not found. Please try again.
+  </div>
+
+</div>
